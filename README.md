@@ -61,28 +61,63 @@ The logger.py, utils.py and main.py modules do not require testing.
 This repository has been tested on a MacBook Pro (16-inch, 2019) and EC2 t2.medium instance.
 ## Locally
 1. Clone the repository
-... TODO
-
-2. Create a virtual environment and install dependencies
 ```bash
-python3 -m venv ./venv
-source ./venv/bin/activate
-pip install -r requirements.txt
+git clone https://github.com/infoready-analytics/belong-code-assessment-bonatoc belong-code-assessment
+cd belong-code-assessment
 ```
 
-3. Run the installer
+2. Run the installer script
 ```bash
-cd belong_code_assessment
+./bin/install.sh
+source venv/bin/activate
+```
+
+3. Run the run_main.sh script
+```bash
+./bin/run_main.sh
+```
+
+4. (OPTIONAL) Run tests
+```bash
+./bin/run_tests.sh
+```
+
+## EC2
+Before following these instructions, ensure you have created an IAM role with read and write access to an S3 bucket and attached the policy to your EC2 instance. If you have given access to a specific bucket name, ensure you update the parameter aws_s3_bucket in the config.yml file.
+
+1. Ensure requirements are installed
+```bash
+sudo apt-get install git python3-virtualenv python3.8-venv
+```
+
+2. Clone the repository
+```bash
+git clone https://github.com/infoready-analytics/belong-code-assessment-bonatoc belong-code-assessment && cd belong-code-assessment
+
+# or alternatively, use wget and extract the zip
+wget https://github.com/infoready-analytics/belong-code-assessment-bonatoc/archive/refs/heads/main.zip
+unzip main.zip && cd belong-code-assessment-bonatoc-main
+```
+
+3. Run the installer script
+```bash
 ./bin/install.sh
 source venv/bin/activate
 ```
 
 4. Run the run_main.sh script
 ```bash
-source venv/bin/activate
 ./bin/run_main.sh
 ```
 
-## EC2
+5. (OPTIONAL) Run tests
+```bash
+./bin/run_tests.sh
+```
 
 # Development
+Ensure belong_code_assessment Python package is on your PYTHONPATH:
+
+```bash
+export PYTHONPATH=$PYTHONPATH:/path/to/belong_code_assessment
+```

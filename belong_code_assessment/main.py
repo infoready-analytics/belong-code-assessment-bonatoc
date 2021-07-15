@@ -2,6 +2,7 @@ import argparse
 from pathlib import Path
 
 from belong_code_assessment import api
+from belong_code_assessment.aws import upload_to_s3
 from belong_code_assessment.config import Config
 from belong_code_assessment.stats import aggregate
 from belong_code_assessment.utils import load_dataframe, save_dataframe
@@ -60,6 +61,7 @@ def main():
     for key, output_df in outputs.items():
         output_path = output_dir.joinpath(f"{key}.csv")
         save_dataframe(output_df, output_path, fmt="csv")
+        upload_to_s3(output_path, cfg["aws_s3_bucket"])
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 # aws config
-aws_s3_bucket: "belong-code-assessment"
+aws_s3_bucket: "belong-code-assessment-bonatoc"
 
 # dev options
 save_dataframe: true
