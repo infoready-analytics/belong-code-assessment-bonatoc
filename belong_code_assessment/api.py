@@ -1,6 +1,7 @@
 import urllib
 from multiprocessing import cpu_count
 from multiprocessing.pool import ThreadPool
+from pathlib import Path
 
 import pandas as pd
 import requests
@@ -98,7 +99,7 @@ def get_pedestrian_data_from_http(url, filepath, retries=3):
         try:
             urllib.request.urlretrieve(url, filepath)
 
-            if filepath.exists():
+            if Path(filepath).exists():
                 return pd.read_csv(filepath)
         except Exception as e:
             retries -= 1
