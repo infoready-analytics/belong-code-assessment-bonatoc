@@ -56,6 +56,6 @@ def aggregate(df):
     return {
         "top_all_daily": daily_all,
         "top_10_daily": daily_10,
-        "monthly_all_daily": monthly_all,
-        "monthly_10_daily": monthly_10,
+        "top_all_monthly": monthly_all,
+        "top_10_monthly": monthly_10,
     }
