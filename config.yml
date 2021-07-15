@@ -11,7 +11,3 @@ output_dir: "data"
 # endpoint config
 pedestrian_csv_url: "https://data.melbourne.vic.gov.au/api/views/b2ak-trbp/rows.csv?accessType=DOWNLOAD"
 pedestrian_api_url: "https://data.melbourne.vic.gov.au/resource/b2ak-trbp.json"
-
-# log config
-log_dir: "logs"
-log_level: "DEBUG"

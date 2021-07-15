@@ -13,7 +13,6 @@ These outputs are saved to disk, but can also optionally be uploaded to an S3 bu
     * api.py: utils for downloading data over HTTP or JSON via GET requests to the Socrata Open Data API
     * aws.py: uploading files to S3
     * config.py: configuration management
-    * logger.py: logging management
     * main.py: CLI entrypoint
     * stats.py: logic for extraction of stats
     * utils.py: general utilities shared across other files
@@ -51,11 +50,8 @@ I have selected the following 3rd party Python libraries:
 ### Testing
 As mentioned in [Project Structure](#Project-Structure), tests are defined in the directory **tests**. I have used the **pytest** library for unit tests. The following modules are tested:
 * api.py: test downloading CSV data over HTTP and JSON data via SODA.
-* aws.py: test reading from and uploading to S3 bucket. 
-* config.py: test configuration file can be parsed and loaded.
+* aws.py: demonstration of reading from and uploading to S3 bucket. 
 * stats.py: test stats are calculated as expected.
-
-The logger.py, utils.py and main.py modules do not require testing.
 
 # Running the script
 This repository has been tested on a MacBook Pro (16-inch, 2019) and EC2 t2.medium instance.

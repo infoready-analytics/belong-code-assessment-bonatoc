@@ -5,7 +5,7 @@ from multiprocessing.pool import ThreadPool
 import pandas as pd
 import requests
 
-from belong_code_assessment.utils import preprocess_df, unpack_args
+from belong_code_assessment.utils import get_logger, preprocess_df, unpack_args
 
 
 def get_pedestrian_record_count(url):
